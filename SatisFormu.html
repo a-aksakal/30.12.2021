@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Satış Formu</title>
+            <style> 
+                td{background-color: pink; font-size: 14px;font-weight: bold;}
+                tr{height: 30px;}
+            </style>
+            <link rel="stylesheet" href="css/button.css" />
+            <script language="JavaScript">
+                function Save()
+                {
+                    var radioList=document.getElementsByName("rdCredit");
+                    for(var i=0; i<radioList.length;i++)
+                    {
+                        if(radioList[i].checked==true)
+                        {
+                            var result=radioList[i].nextElementSibling.innerHTML;
+                            window.alert(result);
+                            break;
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                        
+                    /*if(document.satisFormu.rdCredit[0].checked==true)
+                   {
+                       var result=document.getElementById("rdCredit1").nextElementSibling.innerHTML;
+                        window.alert(result);
+                   }
+                   else if(document.satisFormu.rdCredit[1].checked==true)
+                   {
+                    var result=document.getElementById("rdCredit2").nextElementSibling.innerHTML;
+                        window.alert(result);
+                   }*/
+                    
+                }
+
+            </script>
+    </head>
+
+    <body style="background-color: rgb(218, 214, 214);">
+        <form name="satisFormu" id="satisFormu" method="post">
+            <center>
+                <h1>Satış Formu</h1>
+                <hr/>
+                <table border="1" width="40%" style="border-collapse: collapse;">
+                    <tr>
+                        <td width="30%" align="right">Satış Tarihi</td>
+                        <td width="70%"><input type="date" name="dtpSalesDate" id="dtpSalesDate" style="width: 60%;"/></td>
+                    </tr>
+                    <tr>
+                        <td width="30%" align="right">Teslim Tarihi</td>
+                        <td width="70%"><input type="date" name="dtpDeliveryDate" id="dtpDeliveryDate" style="width: 60%;"/></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Müşteri</td>
+                        <td>
+                            <select name="cmbCustomer" id="cmbCustomer" style="width:60%;">
+                                <option value="0" selected hidden>Lütfen Seçiniz...</option>
+                                <option value="1">Okancan Okan</option>
+                                <option value="2">Muhittin Timur</option>
+                                <option value="3">Onur Kulabaş</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Proje</td>
+                        <td>
+                            <select name="cmbProject" id="cmbProject" style="width:60%">
+                                <option value="0" selected hidden>Lütfen Seçiniz...</option>
+                                <option value="1">34 İstanbul</option>
+                                <option value="2">Yeni Mahalle</option>
+                                <option value="3">Şehr-i Plaza</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Apartman</td>
+                        <td>
+                            <select name="cmbApartment" id="cmbApartment" style="width:60%">
+                                <option value="0" selected hidden>Lütfen Seçiniz...</option>
+                                <option value="1">A Blok</option>
+                                <option value="2">B Blok</option>
+                                <option value="3">C Blok</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Daire</td>
+                        <td>
+                            <select name="cmbApartment" id="cmbApartment" style="width:60%">
+                                <option value="0" selected hidden>Lütfen Seçiniz...</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Fiyat</td>
+                        <td>
+                            <input type="text" name="txtPrice1" id="txtPrice1" style="width:30%;"/>,<input type="text" name="txtPrice2" id="txtPrice2" style="width:10%;"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Çalışan</td>
+                        <td>
+                            <select name="cmbEmployee" id="cmbEmployee" style="width:60%">
+                                <option value="0" selected hidden>Lütfen Seçiniz...</option>
+                                <option value="1">Alican Aksakal</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Notlar</td>
+                        <td><textarea name="txtNotes" id="txtNotes" style="width: 99%; height: 50px;"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Kredi Kullanıldı mı?</td>
+                        <td>
+                            <input type="radio" name="rdCredit" id="rdCredit1" value="5"/><label for="rdCredit1">Evet</label>
+                            <input type="radio" name="rdCredit" id="rdCredit2" value="6"/><label for="rdCredit2">Hayır</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Ek Talepler:</td>
+                        <td>
+                            <input type="checkbox" name="chkRequest" id="chkMobilya" value="1"/>Mobilya
+                            <br/>
+                            <input type="checkbox" name="chkRequest" id="chkKlima" value="2"/>Klima
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center"> 
+                            
+                            <input type="button" name="btnSave" id="btnSave" value="Kaydet" class="btn" onclick="Save()"/>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </form>
+    </body>
+</html>

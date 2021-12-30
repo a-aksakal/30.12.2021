@@ -1,0 +1,12 @@
+.btn
+{
+  width: 20%; 
+  height: 40px; 
+  background-color: rgb(199, 191, 191); 
+  border-radius: 4px; 
+  color: rgb(70, 121, 141); 
+  font-weight: bold; 
+  border-color: thistle; 
+  border-width: 4px; 
+  border-inline:inherit;
+}

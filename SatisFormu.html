@@ -11,12 +11,13 @@
                 function Save()
                 {
                     var radioList=document.getElementsByName("rdCredit");
+                    var chkRequestList=document.getElementsByName("chkRequest");
+                    var requestResult="";
                     for(var i=0; i<radioList.length;i++)
                     {
                         if(radioList[i].checked==true)
                         {
-                            var result=radioList[i].nextElementSibling.innerHTML;
-                            window.alert(result);
+                            var creditResult=radioList[i].nextElementSibling.innerHTML;
                             break;
                         }
                         else
@@ -24,6 +25,14 @@
                             continue;
                         }
                     }
+                    for(var i=0;i<chkRequestList.length;i++)
+                    {
+                        if(chkRequestList[i].checked==true)
+                        {
+                            requestResult +=chkRequestList[i].nextElementSibling.innerHTML+" ";
+                        }
+                    }
+                    window.alert(" Kredi Durumu: "+creditResult +"\n Ek Talepler: "+requestResult)
                         
                     /*if(document.satisFormu.rdCredit[0].checked==true)
                    {
@@ -128,9 +137,9 @@
                     <tr>
                         <td align="right">Ek Talepler:</td>
                         <td>
-                            <input type="checkbox" name="chkRequest" id="chkMobilya" value="1"/>Mobilya
+                            <input type="checkbox" name="chkRequest" id="chkMobilya" value="1"/><label>Mobilya</label>
                             <br/>
-                            <input type="checkbox" name="chkRequest" id="chkKlima" value="2"/>Klima
+                            <input type="checkbox" name="chkRequest" id="chkKlima" value="2"/><label>Klima</label>
                         </td>
                     </tr>
                     <tr>

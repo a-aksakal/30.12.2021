@@ -10,6 +10,16 @@
             <script language="JavaScript">
                 function Save()
                 {
+                    var salesDate = document.getElementById("dtpSalesDate").value;
+                    var deliveryDate = document.getElementById("dtpDeliveryDate").value;
+                    var customer = document.getElementById("cmbCustomer").selectedOptions[0].innerHTML;
+                    var project = document.getElementById("cmbProject").selectedOptions[0].innerHTML;
+                    var apartment = document.getElementById("cmbApartment").selectedOptions[0].innerHTML;
+                    var suite = document.getElementById("cmbSuite").selectedOptions[0].innerHTML;
+                    var price1 = document.getElementById("txtPrice1").value;
+                    var price2 = document.getElementById("txtPrice2").value;
+                    var employee = document.getElementById("cmbEmployee").selectedOptions[0].innerHTML;
+                    var notes = document.getElementById("txtNotes").value;
                     var radioList=document.getElementsByName("rdCredit");
                     var chkRequestList=document.getElementsByName("chkRequest");
                     var requestResult="";
@@ -32,7 +42,10 @@
                             requestResult +=chkRequestList[i].nextElementSibling.innerHTML+" ";
                         }
                     }
-                    window.alert(" Kredi Durumu: "+creditResult +"\n Ek Talepler: "+requestResult)
+                    window.alert(" Satış Tarihi: "+salesDate+"\n Teslim tarihi: "+deliveryDate+"\n Müşteri: "+customer+
+                                 "\n Proje: "+project+"\n Apartman: "+apartment+"\n Daire: "+suite+"\n Fiyat: "+price1+","+price2+" TL"+
+                                 "\n Çalışan: "+employee+"\n Notlar: "+notes+
+                                 "\n Kredi Durumu: "+creditResult +"\n Ek Talepler: "+requestResult)
                         
                     /*if(document.satisFormu.rdCredit[0].checked==true)
                    {
@@ -100,7 +113,7 @@
                     <tr>
                         <td align="right">Daire</td>
                         <td>
-                            <select name="cmbApartment" id="cmbApartment" style="width:60%">
+                            <select name="cmbSuite" id="cmbSuite" style="width:60%">
                                 <option value="0" selected hidden>Lütfen Seçiniz...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
